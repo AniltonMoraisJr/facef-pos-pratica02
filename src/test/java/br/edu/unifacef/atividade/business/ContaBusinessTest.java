@@ -59,6 +59,7 @@ public class ContaBusinessTest {
 
         Conta contaSalva = business.salvarConta(novaConta);
 
-
+        assertEquals(new Long(1L), contaSalva.getId());
+        assertEquals(new Long(1L), contaSalva.getClienteId());
     }
 }
