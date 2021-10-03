@@ -46,7 +46,7 @@ public class Deposito {
 
 	@Override
 	public String toString() {
-		return "Saque [id=" + id + ", contaId=" + contaId + ", data=" + data + ", valor=" + valor + "]";
+		return "Deposito [id=" + id + ", contaId=" + contaId + ", data=" + data + ", valor=" + valor + "]";
 	}
 	
 	
