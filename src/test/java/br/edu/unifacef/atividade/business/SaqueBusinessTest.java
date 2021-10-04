@@ -68,8 +68,6 @@ public class SaqueBusinessTest {
 
     @Test
     public void naoDeveRetornarSaqueComSucesso(){
-        Mockito.when(this.saqueDAO.findById(1L)).thenReturn(this.saqueMock);
-
         SaqueBusiness business = new SaqueBusiness(saqueDAO);
 
         try {

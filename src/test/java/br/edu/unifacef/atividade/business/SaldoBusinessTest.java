@@ -53,7 +53,6 @@ public class SaldoBusinessTest {
 
     @Test
     public void naoDeveRetornarSaldoErroSaldoNaoEncontrado(){
-        Mockito.when(this.saldoDAO.findById(1L)).thenReturn(this.saldoMock);
         SaldoBusiness business = new SaldoBusiness(this.saldoDAO, this.contaDAO);
         try{
             Saldo saldoRetornado = business.findById(2L);
@@ -79,8 +78,6 @@ public class SaldoBusinessTest {
 
     @Test
     public void naoDeveRetornarSaldoErroContaNaoEncontrado(){
-        Mockito.when(this.contaDAO.findById(1L)).thenReturn(this.contaMock);
-        Mockito.when(this.saldoDAO.findByContaId(1L)).thenReturn(this.saldoMock);
 
         SaldoBusiness business = new SaldoBusiness(this.saldoDAO, this.contaDAO);
 

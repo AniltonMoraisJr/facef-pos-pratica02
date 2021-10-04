@@ -72,9 +72,6 @@ public class ContaBusinessTest {
         novaConta.setNumeroConta(10001L);
         novaConta.setNumeroAgencia(1001L);
 
-        Mockito.when(this.clienteDAO.findById(1L)).thenReturn(this.clientMock);
-        Mockito.when(this.contaDAO.salvar(novaConta)).thenReturn(this.contaMock);
-
         ContaBusiness business = new ContaBusiness(this.clienteDAO, this.contaDAO);
 
         try {
@@ -93,9 +90,6 @@ public class ContaBusinessTest {
         novaConta.setNomeBanco("NuBank");
         novaConta.setNumeroConta(10001L);
         novaConta.setNumeroAgencia(1001L);
-
-        Mockito.when(this.clienteDAO.findById(1L)).thenReturn(this.clientMock);
-        Mockito.when(this.contaDAO.salvar(novaConta)).thenReturn(this.contaMock);
 
         ContaBusiness business = new ContaBusiness(this.clienteDAO, this.contaDAO);
 

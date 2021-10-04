@@ -60,8 +60,6 @@ public class ClientBusinessTest {
 
     @Test
     public void naoDeveRetornarClienteComSucesso(){
-        Mockito.when(this.clienteDAO.findById(1L)).thenReturn(this.clientMock);
-
         ClienteBusiness business = new ClienteBusiness(clienteDAO);
         try {
             Cliente clienteRetornado = business.findCliente(2l);

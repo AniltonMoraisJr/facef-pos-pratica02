@@ -67,8 +67,6 @@ public class DepositoBusinessTest {
 
     @Test
     public void naoDeveRetornarDepositoComSucesso(){
-        Mockito.when(this.depositoDAO.findById(1L)).thenReturn(this.depositoMock);
-
         DepositoBusiness business = new DepositoBusiness(depositoDAO);
 
         try {

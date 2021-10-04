@@ -5,14 +5,14 @@ Trabalho da matéria de Técnica e Fundamentos da Pós de Desenvolvimento de Apl
 
 - Comando para geração
 
-![img_2.png](img_2.png)
+![img_1.png](img_1.png)
 
 # Executando container
 
 - Comando para executar
 
 ```shell
-docker run atividade
+docker run atividade:v1
 ```
 - Saída esperada
 
