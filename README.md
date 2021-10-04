@@ -5,8 +5,9 @@ Trabalho da matéria de Técnica e Fundamentos da Pós de Desenvolvimento de Apl
 
 - Comando para geração
 
-![img.png](img.png)
+![img_2.png](img_2.png)
 
-- Saída
+# Executando container
 
+- Comando para executar
 

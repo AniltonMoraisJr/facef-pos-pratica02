@@ -8,10 +8,10 @@ COPY ./ ./
 
 RUN mvn clean package
 
-COPY ./target/*.jar /app.jar
-
 #criar a imagem docker do .jar
 
 FROM openjdk:11-jre-slim
+
+COPY --from=build /app/target/*.jar /app.jar
 
 CMD ["java", "-jar", "/app.jar"]
