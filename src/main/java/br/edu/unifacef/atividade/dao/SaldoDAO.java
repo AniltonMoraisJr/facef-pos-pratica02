@@ -1,6 +1,5 @@
 package br.edu.unifacef.atividade.dao;
 
-import br.edu.unifacef.atividade.model.Conta;
 import br.edu.unifacef.atividade.model.Saldo;
 
 public class SaldoDAO {

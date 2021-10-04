@@ -11,3 +11,9 @@ Trabalho da matéria de Técnica e Fundamentos da Pós de Desenvolvimento de Apl
 
 - Comando para executar
 
+```shell
+docker run atividade
+```
+- Saída esperada
+
+![img.png](img.png)

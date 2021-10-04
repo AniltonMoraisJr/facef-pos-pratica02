@@ -1,17 +1,10 @@
 #seleciona imagem para o build
 FROM maven:3.6.0-jdk-11-slim AS build
-
-WORKDIR /app
-
-#copia o fonte projeto para o workdir
-COPY ./ ./
-
-RUN mvn clean package
-
+COPY src /home/app/src
+COPY pom.xml /home/app
+RUN mvn -f /home/app/pom.xml clean package
 #criar a imagem docker do .jar
-
 FROM openjdk:11-jre-slim
+COPY --from=build /home/app/target/atividade-0.0.1-SNAPSHOT.jar /usr/local/lib/atividade.jar
 
-COPY --from=build /app/target/*.jar /app.jar
-
-CMD ["java", "-jar", "/app.jar"]
+ENTRYPOINT ["java", "-jar", "/usr/local/lib/atividade.jar"]

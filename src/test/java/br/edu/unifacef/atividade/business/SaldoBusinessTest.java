@@ -1,6 +1,5 @@
 package br.edu.unifacef.atividade.business;
 
-import br.edu.unifacef.atividade.dao.ClienteDAO;
 import br.edu.unifacef.atividade.dao.ContaDAO;
 import br.edu.unifacef.atividade.dao.SaldoDAO;
 import br.edu.unifacef.atividade.model.Conta;
