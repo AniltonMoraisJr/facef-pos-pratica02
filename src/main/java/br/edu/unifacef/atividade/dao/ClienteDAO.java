@@ -6,7 +6,7 @@ public class ClienteDAO {
 	
 	public Cliente salvar(final Cliente cliente) {
 		
-		cliente.setId(1000L);
+		cliente.setId(1L);
 		
 		return cliente;		
 	}

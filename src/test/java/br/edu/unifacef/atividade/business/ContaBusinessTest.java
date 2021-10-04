@@ -62,4 +62,48 @@ public class ContaBusinessTest {
         assertEquals(new Long(1L), contaSalva.getId());
         assertEquals(new Long(1L), contaSalva.getClienteId());
     }
+
+    @Test
+    public void naoDeveSalvarContaComSucessoErroAoEncontrarCliente(){
+        Conta novaConta = new Conta();
+        novaConta.setId(1L);
+        novaConta.setClienteId(2L);
+        novaConta.setNomeBanco("NuBank");
+        novaConta.setNumeroConta(10001L);
+        novaConta.setNumeroAgencia(1001L);
+
+        Mockito.when(this.clienteDAO.findById(1L)).thenReturn(this.clientMock);
+        Mockito.when(this.contaDAO.salvar(novaConta)).thenReturn(this.contaMock);
+
+        ContaBusiness business = new ContaBusiness(this.clienteDAO, this.contaDAO);
+
+        try {
+            Conta contaSalva = business.salvarConta(novaConta);
+        }catch (Exception e) {
+            assertEquals(RuntimeException.class, e.getClass());
+            assertEquals("Cliente não encontrado.", e.getMessage());
+        }
+    }
+
+    @Test
+    public void naoDeveSalvarContaComSucessoErroClienteNaoInformado(){
+        Conta novaConta = new Conta();
+        novaConta.setId(1L);
+        novaConta.setClienteId(null);
+        novaConta.setNomeBanco("NuBank");
+        novaConta.setNumeroConta(10001L);
+        novaConta.setNumeroAgencia(1001L);
+
+        Mockito.when(this.clienteDAO.findById(1L)).thenReturn(this.clientMock);
+        Mockito.when(this.contaDAO.salvar(novaConta)).thenReturn(this.contaMock);
+
+        ContaBusiness business = new ContaBusiness(this.clienteDAO, this.contaDAO);
+
+        try {
+            Conta contaSalva = business.salvarConta(novaConta);
+        }catch (Exception e) {
+            assertEquals(RuntimeException.class, e.getClass());
+            assertEquals("Nenhum cliente informado.", e.getMessage());
+        }
+    }
 }
